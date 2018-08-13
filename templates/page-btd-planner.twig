@@ -14,56 +14,43 @@
             {% endif %}
   				</div> 
 			  </div>
-			  <img class="prorail" alt="prorail" src="{{ options.prorail_logo }}">
+			  <a href="http://www.prorail.nl" target="_blank"> <img class="prorail" alt="prorail" src="{{ options.prorail_logo }}"> </a>
         <div class="btn-scrolldown">
 		      <img width="60" height="60" src="{{theme.link}}/static/img/down-chevron.svg">
         </div>
 			</section>
 			<section id="newsblock">
 			  <div class="container">
+  			  <div class="text-center">
+  			    <h2 class="center">  Eerstvolgende bijeenkomst </h2>
+  			  </div>
 			    <div class="row">
-			      <div class="col-md-7">
-			        <div class="mod-nieuws">
-    			      <h2> Nieuws </h2>
-    	          {% for item in nieuws %}
-    	            <a href="{{ item.permalink }}" class="item">
-                    <h3> {{ item.title }} </h3>
-                    <small> {{ item.date }} </small>
-    	            </a>
-    	          {% endfor %}
-    			    </div>
-            </div>
-            <div class="col-md-5">
+            <div class="col-md-10 offset-md-1">
               <div class="mod-kalender">
-                <div class="card">
-                  <div class="card-block">
-                    <h2> Kalender </h2>
-                    {% if kalender|length == 0 %} 
-                      Er zijn geen evenementen geplanned op dit moment
-                      <br>
-                    {% else %}
-                      {% for item in kalender %}
-                        <a class="item" href="{{ item.permalink }}">
-                          <div class="date">
-                            <div class="d">
-                              {{ item.datum|date('d') }}
-                            </div>
-                            <div class="m">
-                              {{ item.datum|date('M') }}
-                            </div>
-                          </div>
-                          <h3> {{ item.title }} </h3>
-                          <p> {{ item.locatie }} </p>
-                        </a>
-          	          {% endfor %}
-                    {% endif %}
-        	          <br>
-        	          <a href="/kalender" class="btn-readmore">
-        	            <span></span>
-        	            Bekijk kalender
+                {% if kalender|length == 0 %} 
+                  Er zijn geen evenementen geplanned op dit moment
+                  <br>
+                {% else %}
+                  {% for item in kalender %}
+                    <a class="item {% if loop.first %} first {% endif %}" href="{{ item.permalink }}">
+                      <div class="date">
+                        <div class="d">
+                          {{ item.datum|date('d') }}
+                        </div>
+                        <div class="m">
+                          {{ item.datum|date('M') }}
+                        </div>
+                      </div>
+                      <h3> {{ item.title }} </h3>
+                      <p> {{ item.locatie }} </p>
                     </a>
-                  </div>
-                </div>
+      	          {% endfor %}
+                {% endif %}
+    	          <br>
+    	          <a href="/kalender" class="btn-readmore">
+    	            <span></span>
+    	            Bekijk kalender
+                </a>
               </div>
             </div>
           </div>
@@ -71,13 +58,64 @@
 			</section>
 			<section class="mod-formbar alt">
 			  <div class="container">
-			    <h2 class="text-center">{{ options.form_titel }}</h2>
+			    <div class="text-center">
+			      <h2 class="center">{{ options.form_titel }}</h2>
+			    </div>
 			    <div class="row">
 			      <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
               {% include "form.twig" %}
 			      </div>
 			    </div>
 			  </div>
+			</section>
+			<section class="mod-kennisbank-home">
+  			<div class="container">
+  			  <div class="text-center">
+  			    <h2 class="center"> Kennisbank </h2>
+  			  </div>
+          <div class="row">
+  			    {% for item in kennisbank %}
+  			      <div class="col-md-4">
+                <div class="item">
+                  <div class="head">
+                    <a {% if item.content %} href="{{item.link}}" {% endif %}>
+                      {% if item.terms('type')|length > 0 %}
+                        {% for term in item.terms('type') %}
+                          <img width="190" height="190" src="
+                          {% if item.kb_afbeelding %} 
+                            {{ TimberImage(item.kb_afbeelding).src }} 
+                          {% elseif term.kb_afbeelding %}
+                            {{ term.kb_afbeelding }}
+                          {% endif %}" class="proraillogo"> 
+                        {% endfor %}
+                      {% else %}
+                        <img width="190" height="190" src="{{ theme.link }}/static/img/btdtile.png" class="proraillogo"> 
+                      {% endif %}
+                    </a>
+                    <h3>
+                      {% if item.content %}<a href="{{item.link}}" >{% endif %}
+                        {{ item.title }}
+                      {% if item.content %}</a>{% endif %}
+                    </h3>
+                    <div class="date">{{ item.date }}</div>
+                    {{ item.get_field('kb_toelichting') }}
+                  </div>
+                  {% if item.content %}
+                    <a class="btn-readmore" href="{{item.link}}"> <span></span> Bekijken </a>
+                  {% else %}
+                    {% if item.kb_file %}            
+                      {% set file = TimberImage(item.kb_file) %}
+                      <a class="btn-readmore" target="_blank" href="{{ file.src }}" download><span></span> Download </a>
+                    {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+  			  </div>
+  			  <div class="text-center">
+  	        <a class="btn btn-outline btn-big" href="http://www.btd-planner.nl/kennisbank/"> Meer kennisbank</a>
+  	      </div>
+  			</div>
 			</section>
       {% include 'pagebuilder.twig' %}
 		</div>

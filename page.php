@@ -51,11 +51,17 @@ $args2 = array(
 
 $context['kalender'] = Timber::get_posts($args2);
 
+$args3 = array(
+  'post_type'			  => 'kennisbank',
+	'posts_per_page'  => 3,
+  'order' => 'DESC',
+);
+
+$context['kennisbank'] = Timber::get_posts($args3);
+
 $context['type'] = Timber::get_terms('type');
 
-
 $context['topknoplink'] = get_field('top_knop_link');
-
 
 $post = new TimberPost();
 

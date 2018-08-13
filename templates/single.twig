@@ -3,6 +3,20 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+      <section class="mod-breadcrumbs alt">
+        <div class="container">
+          <ul>
+            <li>
+              <a href="/" class="btn-link"> Btd-Planner</a> 
+            </li>
+            <li>/</li>  
+            <li>
+              <a href="/kennisbank" class="btn-link"> Kennisbank</a>
+            </li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </section>
 			<section class="article-content">
 			  <div class="container">
 			    <div class="row">
@@ -22,15 +36,18 @@
       				</div>
       				<div class="meta">
         				<h2>
-        				  {% if post.datum %} {{ post.datum|date(dmY) }}{% endif %}{% if post.locatie %}, {{ post.locatie }} {% endif %}
+        				  {% if post.datum %} {{ post.datum|date(dmY) }} {% else %} {{ post.date|date(dmY) }} {% endif %}{% if post.locatie %}, {{ post.locatie }} {% endif %}
         				</h2>
+        				
       				</div>
       				<div class="article-body">
+      				  <!--
       				  {% if post.kb_youtube_url %}
       				    <div class="embed-responsive embed-responsive-16by9">
       					    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ post.kb_youtube_url }}" frameborder="0" allowfullscreen></iframe>
       				    </div>
                 {% endif %}
+                -->
       					{{ post.content }}
       					{{ post.get_field('kb_details') }}
       					<div class="clearfix"></div>

@@ -34,6 +34,11 @@
       margin: 0;
       line-height: 18px;
     }
+    &.first {
+      h3 {
+        font-size: 32px;
+      }
+    }
   }
   .item:hover {
     color: $red;

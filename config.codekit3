@@ -7,7 +7,7 @@
 		"uuidString": "C07BAF21-0E3F-463B-912B-87192EF98EE0"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26680",
 "files": {
 	"\/.gitignore": {
 		"cB": 0,
@@ -336,6 +336,19 @@
 		"oS": 3,
 		"uL": 1
 		},
+	"\/assets\/scss\/modules\/_breadcrumbs.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/scss\/modules\/_breadcrumbs.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
 	"\/assets\/scss\/modules\/_faq.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -397,6 +410,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/scss\/modules\/_kalender.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/scss\/modules\/_kennisbank-home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/scss\/modules\/_kennisbank-home.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -639,6 +665,13 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/bower_components\/aos\/dist\/aos.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bower_components\/aos\/dist\/aos.css.map",
+		"oF": 0
+		},
 	"\/bower_components\/aos\/dist\/aos.js": {
 		"ft": 64,
 		"ma": 0,
@@ -648,6 +681,13 @@
 		"oF": 0,
 		"sC": 1,
 		"tS": 0
+		},
+	"\/bower_components\/aos\/dist\/aos.js.map": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/bower_components\/aos\/dist\/aos.js.map",
+		"oF": 0
 		},
 	"\/bower_components\/aos\/karma.conf.js": {
 		"ft": 64,
@@ -2696,6 +2736,14 @@
 		"sC": 1,
 		"tS": 0
 		},
+	"\/bower_components\/ev-emitter\/package.json": {
+		"ft": 524288,
+		"oA": 2,
+		"oAP": "\/bower_components\/ev-emitter\/package.json",
+		"oF": 0,
+		"oO": 0,
+		"oS": 1
+		},
 	"\/bower_components\/ev-emitter\/README.md": {
 		"cB": 0,
 		"cS": 0,
@@ -2756,6 +2804,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/black.jpg": {
 		"ft": 16384,
 		"iS": 90798,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/black.jpg",
 		"oF": 0,
@@ -2766,6 +2815,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/black.thumb.jpg": {
 		"ft": 16384,
 		"iS": 9034,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/black.thumb.jpg",
 		"oF": 0,
@@ -2776,6 +2826,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/blue.jpg": {
 		"ft": 16384,
 		"iS": 19251,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/blue.jpg",
 		"oF": 0,
@@ -2786,6 +2837,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/blue.thumb.jpg": {
 		"ft": 16384,
 		"iS": 8946,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/blue.thumb.jpg",
 		"oF": 0,
@@ -2796,6 +2848,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/droplets.jpg": {
 		"ft": 16384,
 		"iS": 84573,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/droplets.jpg",
 		"oF": 0,
@@ -2806,6 +2859,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/droplets.thumb.jpg": {
 		"ft": 16384,
 		"iS": 11950,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/droplets.thumb.jpg",
 		"oF": 0,
@@ -2816,6 +2870,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/feed.jpg": {
 		"ft": 16384,
 		"iS": 45755,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/feed.jpg",
 		"oF": 0,
@@ -2826,6 +2881,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/feed.thumb.jpg": {
 		"ft": 16384,
 		"iS": 16682,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/feed.thumb.jpg",
 		"oF": 0,
@@ -2836,6 +2892,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/red_and_yellow.jpg": {
 		"ft": 16384,
 		"iS": 329461,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/red_and_yellow.jpg",
 		"oF": 0,
@@ -2846,6 +2903,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/red_and_yellow.thumb.jpg": {
 		"ft": 16384,
 		"iS": 27470,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/red_and_yellow.thumb.jpg",
 		"oF": 0,
@@ -2856,6 +2914,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/two_birds.jpg": {
 		"ft": 16384,
 		"iS": 52385,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/two_birds.jpg",
 		"oF": 0,
@@ -2866,6 +2925,7 @@
 	"\/bower_components\/featherlight\/assets\/images\/two_birds.thumb.jpg": {
 		"ft": 16384,
 		"iS": 10929,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/featherlight\/assets\/images\/two_birds.thumb.jpg",
 		"oF": 0,
@@ -4712,6 +4772,7 @@
 	"\/bower_components\/lity\/test\/functional\/img\/sample.jpeg": {
 		"ft": 16384,
 		"iS": 86176,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/lity\/test\/functional\/img\/sample.jpeg",
 		"oF": 0,
@@ -4722,6 +4783,7 @@
 	"\/bower_components\/lity\/test\/functional\/img\/sample.jpg": {
 		"ft": 16384,
 		"iS": 86176,
+		"jF": 0,
 		"oA": 2,
 		"oAP": "\/bower_components\/lity\/test\/functional\/img\/sample.jpg",
 		"oF": 0,
@@ -7728,7 +7790,8 @@
 	"creationDate": 513859470,
 	"displayValue": "btdplanner",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-ive"
+	"iconImageName": "\/favicons\/apple-touch-icon.png",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -7736,6 +7799,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -9530,6 +9594,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
