@@ -26,31 +26,34 @@
   			  </div>
 			    <div class="row">
             <div class="col-md-10 offset-md-1">
-              <div class="mod-kalender">
+              <div class="mod-kalender-home">
                 {% if kalender|length == 0 %} 
                   Er zijn geen evenementen geplanned op dit moment
                   <br>
                 {% else %}
                   {% for item in kalender %}
-                    <a class="item {% if loop.first %} first {% endif %}" href="{{ item.permalink }}">
+                    <div class="item {% if loop.first %} first {% endif %}" href="{{ item.permalink }}">
                       <div class="date">
                         <div class="d">
                           {{ item.datum|date('d') }}
                         </div>
                         <div class="m">
-                          {{ item.datum|date('M') }}
+                          {% if loop.first %}
+                            {{ item.datum|date('M') }}
+                          {% else %}
+                            {{ item.datum|date('F') }}
+                          {% endif %}
                         </div>
                       </div>
                       <h3> {{ item.title }} </h3>
                       <p> {{ item.locatie }} </p>
-                    </a>
+                    </div>
       	          {% endfor %}
                 {% endif %}
     	          <br>
-    	          <a href="/kalender" class="btn-readmore">
-    	            <span></span>
-    	            Bekijk kalender
-                </a>
+    	          <div class="text-center">
+        	        <a class="btn btn-outline" href="/kalender"> Bekijk kalender </a>
+        	      </div>
               </div>
             </div>
           </div>
@@ -78,42 +81,48 @@
   			      <div class="col-md-4">
                 <div class="item">
                   <div class="head">
-                    <a {% if item.content %} href="{{item.link}}" {% endif %}>
-                      {% if item.terms('type')|length > 0 %}
-                        {% for term in item.terms('type') %}
-                          <img width="190" height="190" src="
-                          {% if item.kb_afbeelding %} 
-                            {{ TimberImage(item.kb_afbeelding).src }} 
-                          {% elseif term.kb_afbeelding %}
-                            {{ term.kb_afbeelding }}
-                          {% endif %}" class="proraillogo"> 
-                        {% endfor %}
-                      {% else %}
-                        <img width="190" height="190" src="{{ theme.link }}/static/img/btdtile.png" class="proraillogo"> 
-                      {% endif %}
-                    </a>
-                    <h3>
-                      {% if item.content %}<a href="{{item.link}}" >{% endif %}
-                        {{ item.title }}
-                      {% if item.content %}</a>{% endif %}
-                    </h3>
-                    <div class="date">{{ item.date }}</div>
-                    {{ item.get_field('kb_toelichting') }}
+                    <div class="row">
+                      <div class="col-3 col-md-12">
+                        <a {% if item.content %} href="{{item.link}}" {% endif %}>
+                          {% if item.terms('type')|length > 0 %}
+                            {% for term in item.terms('type') %}
+                              <img width="190" height="190" src="
+                              {% if item.kb_afbeelding %} 
+                                {{ TimberImage(item.kb_afbeelding).src }} 
+                              {% elseif term.kb_afbeelding %}
+                                {{ term.kb_afbeelding }}
+                              {% endif %}" class="proraillogo"> 
+                            {% endfor %}
+                          {% else %}
+                            <img width="190" height="190" src="{{ theme.link }}/static/img/btdtile.png" class="proraillogo"> 
+                          {% endif %}
+                        </a>
+                      </div>
+                      <div class="col-9 col-md-12">  
+                        <h3>
+                          {% if item.content %}<a href="{{item.link}}" >{% endif %}
+                            {{ item.title }}
+                          {% if item.content %}</a>{% endif %}
+                        </h3>
+                        <div class="date">{{ item.date }}</div>
+                        {{ item.get_field('kb_toelichting') }}
+                        {% if item.content %}
+                          <a class="btn-readmore" href="{{item.link}}"> <span></span> Bekijken </a>
+                        {% else %}
+                          {% if item.kb_file %}            
+                            {% set file = TimberImage(item.kb_file) %}
+                            <a class="btn-readmore" target="_blank" href="{{ file.src }}" download><span></span> Download </a>
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    </div>
                   </div>
-                  {% if item.content %}
-                    <a class="btn-readmore" href="{{item.link}}"> <span></span> Bekijken </a>
-                  {% else %}
-                    {% if item.kb_file %}            
-                      {% set file = TimberImage(item.kb_file) %}
-                      <a class="btn-readmore" target="_blank" href="{{ file.src }}" download><span></span> Download </a>
-                    {% endif %}
-                  {% endif %}
                 </div>
               </div>
             {% endfor %}
   			  </div>
   			  <div class="text-center">
-  	        <a class="btn btn-outline btn-big" href="http://www.btd-planner.nl/kennisbank/"> Meer kennisbank</a>
+  	        <a class="btn btn-outline" href="http://www.btd-planner.nl/kennisbank/"> Meer kennisbank</a>
   	      </div>
   			</div>
 			</section>

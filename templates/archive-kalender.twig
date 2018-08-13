@@ -15,7 +15,7 @@
               Er zijn geen evenementen geplanned op dit moment
             {% else %}
               {% for item in kalender %}
-                <a class="item" href="{{ item.permalink }}">
+                <div class="item" href="{{ item.permalink }}">
                   <div class="date">
                     <div class="d">
                       {{ item.datum|date('d') }}
@@ -26,7 +26,7 @@
                   </div>
                   <h3> {{ item.title }} </h3>
                   <p> {{ item.locatie }} </p>
-                </a>
+                </div>
               {% endfor %} 
             {% endif %}
           </div>

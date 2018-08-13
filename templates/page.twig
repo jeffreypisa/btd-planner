@@ -9,6 +9,13 @@
 		    </div>
 		  </div>
 			<div class="article-body">
+			  {% if post.content %}
+  			  <section>
+  			    <div class="container">
+              {{ post.content }}
+  			    </div>
+  			  </section>
+			  {% endif %}
 				{% include 'pagebuilder.twig' %}
 			</div>
 		</article>

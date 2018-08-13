@@ -34,28 +34,5 @@
       margin: 0;
       line-height: 18px;
     }
-    &.first {
-      h3 {
-        font-size: 32px;
-      }
-    }
-  }
-  .item:hover {
-    color: $red;
-    text-decoration: none;
-    .date {
-      border-color: $red;
-    }
-  }
-  .item:focus,
-  .item:target,
-  .item:active {
-    color: lighten($red, 20%);
-    .date {
-      border-color: lighten($red, 20%);
-    }
-  }
-  a {
-    color: $darkgrey;
   }
 }

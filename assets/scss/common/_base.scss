@@ -18,7 +18,9 @@ body {
 input {
     border-radius: 0;
 }
-
+ol, ul, dl {
+  padding-left: 20px;
+}
 h1, h2, h3, h4, h5 {
   font-family: "DIN Next Rounded LT Pro";
   font-weight: 400;
@@ -39,7 +41,7 @@ h1, h2 {
 h2.center {
   display: inline-block;
   border-bottom: 2px solid $darkgrey;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 h3 {
   font-size: 16px;
@@ -92,6 +94,9 @@ section.mod-faq+section.mod-faq {
     font-size: 28px;
     font-weight: 300;
     margin-bottom: 30px;
+  }
+  h2.center {
+    margin-bottom: 50px;
   }
   h3 {
     font-size: 18px;
