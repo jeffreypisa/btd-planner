@@ -1,0 +1,65 @@
+footer {
+  background: $darkgrey;
+  color: #8C9FAA;
+  padding: 25px 0 20px;
+  font-size: 14px;
+  line-height: 24px;
+  img {
+    opacity: 0.5;
+  }
+  h3 {
+    color: #E2E6E7;
+    margin-bottom: 6px;
+  }
+  a {
+    color: #8C9FAA;
+  }
+  a:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+  a:focus,
+  a:target,
+  a:active {
+    color: darken(#fff, 20%);
+  }
+  hr {
+    margin-top: 30px;
+    opacity: 0.5;
+    border-color: #8C9FAA;
+  }
+  .visual-form-builder {
+    margin-bottom: 30px;
+  }
+  .socialmedia {
+    a {
+      img {
+        opacity: 0.5;
+      }
+    }
+    a:hover {
+      img {
+        opacity: 1;
+      }
+    }
+  }
+  .bottomfooter {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .menu, .proraillogo {
+    display: none;
+  }
+}
+@include media-breakpoint-up(md) {
+  footer {
+    padding: 55px 0 18px;
+    margin: 0;
+    .menu {
+      margin-bottom: 30px;
+    }
+    .menu, .proraillogo {
+      display: block;
+    }
+  }
+}

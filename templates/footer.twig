@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <img width="58" height="79" src="{{TimberImage(options.logo_footer).src}}" class="proraillogo">
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        {% include "menu-all.twig" %}
+      	<div class="col-md-12 col-lg-5 offset-lg-3">
+      	  <div class="row">
+      	    <div class="col-md-8 col-lg-12">
+      	      <h3>{{ options.form_titel }}</h3>
+              {% include "form.twig" %}
+            </div>
+            <div class="col-md-4 col-lg-12">
+              {% if options.socialmedia > 0 %}
+                <div class="socialmedia">
+                  <h3> Volg ons op </h3>
+                  {% for sm in options.socialmedia %}
+                    <a href="{{ sm.link }}" target="_blank">
+                      <img width="30" height="30" src="{{TimberImage(sm.icon).src}}">
+                    </a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="bottomfooter">
+    <div class="float-left"> 
+      © {{ "now"|date("Y") }} Btd-Planner 
+    </div>
+    <div class="float-right"> 
+      <img width="70" height="15" src="{{TimberImage(options.prorail_logo).src}}"> 
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</div>

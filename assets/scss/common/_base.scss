@@ -1,0 +1,100 @@
+body {
+  font-family: "Open Sans";
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 22px;
+  background: $background;
+  color: $darkgrey;
+  padding-top: 30px;
+}
+#content {
+  padding-top: 20px;
+}
+*:focus {
+  outline: none;
+}
+*:active {
+  transform: none !important;
+}
+input {
+    border-radius: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "DIN Next Rounded LT Pro";
+  font-weight: 400;
+}
+
+h1 {
+  padding-top: 30px;
+  font-size: 48px;
+}
+.head h1 {
+  padding-top: 0;
+}
+h1, h2 {
+  font-size: 22px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+h2.center {
+  display: inline-block;
+  border-bottom: 2px solid $darkgrey;
+  margin-bottom: 50px;
+}
+h3 {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 0;
+}
+img {
+  max-width: 100%;
+}
+.row-centered {
+    text-align:center;
+    display: block;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.collapse.in {
+  display:block;
+}
+section.mod-faq+section.mod-faq {
+  padding-top: 0;
+}
+@include media-breakpoint-up(sm) {
+  h1, h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+}
+@include media-breakpoint-up(md) {
+  body {
+    padding-top: 0;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  #content {
+    padding-top: 80px;
+  }
+  h1 {
+    padding-top: 30px;
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+  h3 {
+    font-size: 18px;
+  }
+}

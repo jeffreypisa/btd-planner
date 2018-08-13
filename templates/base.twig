@@ -1,0 +1,53 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body ontouchstart="" class="{{body_class}}" data-template="base.twig">
+		{% include 'mobilemenu.twig' %}
+    {% include 'submenu.twig' %}
+		<header class="header {% if fn('is_front_page') %} {% else %} on{% endif %}" >
+			{% block header %}
+				<div class="container">
+					<h1 class="hdr-logo" role="banner">
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">
+						  <img width="182" height="85" src="{{TimberImage(options.logo_header).src}}">
+						</a>
+					</h1>
+          <a href="{{options.actieknop_url}}" class="btn btn-outline-primary float-right hidden-sm-down" target="_blank">{{options.actieknop_naam}}</a>
+					<nav id="nav-main" class="nav-main hidden-sm-down" role="navigation">
+					  {% include 'menu.twig' %}
+					</nav><!-- #nav -->
+				</div>
+			  <a id="mobilemenubtn" href="#" class="btn-menu hidden-md-up">
+				  <span></span>
+          <span></span>
+          <span></span>
+        </a>
+			{% endblock %}
+		</header>
+
+		<div id="content" role="main" class="content-wrapper">
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</div>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

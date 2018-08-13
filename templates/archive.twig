@@ -1,0 +1,57 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+      <div class="mod-pageheader" style="background-image: url( {{TimberImage(options.pageheader_background).src}}">
+        <div class="container">
+          <h1 class="article-h1">Kennisbank </h1>
+        </div>
+      </div>
+      <section class="mod-type alt">
+        <div class="container">
+          <ul class="tag-list">
+    	      <li class="{% if term.slug == '' %} active {% endif %}">
+    	        <a href="/kennisbank">Alle</a>
+            </li>
+            {% for cat in type %}
+              {% if cat.get_posts|length > 0 %}
+                <li class="{{ cat.slug }} {% if term.slug == cat.slug %} active {% endif %} ">
+                  <a href="{{ cat.link }}">{{ cat.name }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="mod-kennisbank">
+            {% for item in kennisbank %}
+              <div class="item">
+                <a href="{{item.link}}">
+                  <img width="190" height="190" src="
+                  {% if item.kb_afbeelding %} 
+                    {{ TimberImage(item.kb_afbeelding).src }} 
+                  {% else %}
+                    {{ theme.link }}/static/img/btdtile.png
+                  {% endif %}" class="proraillogo">
+                </a>
+                <h3><a href="{{item.link}}" >{{ item.title }}</a></h3>
+                <p> {{ item.kb_toelichting }} </p>
+                {% if item.kb_file %}            
+                  {% set file = TimberImage(item.kb_file) %}
+                  <a class="btn btn-outline" target="_blank" href="{{ file.src }}" download>Download </a>
+                {% endif %}
+                {% if item.kb_youtube_url %}
+                  <a class="btn btn-outline" data-lity href="https://www.youtube.com/watch?v={{ item.kb_youtube_url }}">BEKIJK VIDEO</a>
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -1,0 +1,40 @@
+.mod-kennisbank {
+  .item {
+    position: relative;
+    padding-left: 70px;
+    min-height: 60px;
+    margin-bottom: 30px;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0px 1px 3px rgba(0,0,0,.2);
+    }
+    h3 a {
+      font-size: 18px;
+      color: $darkgrey;
+    }
+    h3 a:hover {
+      color: $blue;
+      text-decoration: none;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-kennisbank {
+    .item {
+      padding-left: 180px;
+      min-height: 190px;
+      img {
+        width: 160px;
+        height: 160px;
+      }
+      h3 a {
+        font-size: 24px;
+      }
+    }
+  }
+}

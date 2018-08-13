@@ -1,0 +1,26 @@
+<div class="submenu hidden-sm-down">
+  {% for hoofdmenu in options.hoofdmenu %}
+	  {% if hoofdmenu.menu_with_children == TRUE %}
+	    <div id="{{ hoofdmenu.naam|sanitize }}" class="item hidden">
+    	  <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <h3> {{ hoofdmenu.naam }} </h3>
+              <p> {{ hoofdmenu.toelichting }} </p>
+            </div>
+            <div class="col-8">
+              <div class="row">
+                {% for pagina in hoofdmenu.paginas %}
+                  <div class="col-6">
+                    <a href="{{ pagina.pagina_link }}"> {{ pagina.naam }} </a>
+                    <p> {{ pagina.toelichting }} </p>
+                  </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+	    </div>
+	  {% endif %}
+	{% endfor %}
+</div>

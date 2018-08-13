@@ -1,0 +1,55 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<section class="article-content">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-sm-2"> 
+			      {% if post.prev %}
+			        <a href="{{post.prev.link}}" class="prev"><img src="{{ theme.link }}/static/img/chevron-left.svg" width="30" height="40"> </a>
+			      {% endif %}
+			        <div class="hidden-sm-up">
+              {% if post.next %}
+			          <a href="{{post.next.link}}" class="next"><img src="{{ theme.link }}/static/img/chevron-right.svg" width="30" height="40"> </a>
+			        {% endif %}
+			        </div>
+			      </div>
+			      <div class="col-sm-8">
+			        <div class="head">
+        				<h1>{{post.title}}</h1>
+      				</div>
+      				<div class="meta">
+        				<h2>
+        				  {% if post.datum %} {{ post.datum|date(dmY) }}{% endif %}{% if post.locatie %}, {{ post.locatie }} {% endif %}
+        				</h2>
+      				</div>
+      				<div class="article-body">
+      				  {% if post.kb_youtube_url %}
+      				    <div class="embed-responsive embed-responsive-16by9">
+      					    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ post.kb_youtube_url }}" frameborder="0" allowfullscreen></iframe>
+      				    </div>
+                {% endif %}
+      					{{ post.content }}
+      					{{ post.get_field('kb_details') }}
+      					<div class="clearfix"></div>
+      					{% if post.kb_file %}
+      					  <br>          
+                  {% set file = TimberImage(post.kb_file) %}
+                  <a class="btn btn-outline" target="_blank" href="{{ file.src }}">Download </a>
+                {% endif %}
+      				</div>
+			      </div>
+			      <div class="col-sm-2 hidden-xs-down"> 
+			        {% if post.next %}
+			          <a href="{{post.next.link}}" class="next"><img src="{{ theme.link }}/static/img/chevron-right.svg" width="30" height="40"> </a>
+			        {% endif %}
+			      </div>
+			    </div>
+				</div>
+			</section>
+
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

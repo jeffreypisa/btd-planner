@@ -1,0 +1,19 @@
+<ul>
+	{% for hoofdmenu in options.hoofdmenu %}
+	  <li> 
+	    <a 
+	      {% if hoofdmenu.menu_with_children == TRUE %} 
+	        target="#{{ hoofdmenu.naam|sanitize }}" 
+	        class="js-opensubmenu"
+	        href="#"
+	      {% else %}
+          href="{{ hoofdmenu.pagina_link }}"
+	      {% endif %}> 
+        {{ hoofdmenu.naam }} 
+	      {% if hoofdmenu.menu_with_children == TRUE %} 
+	        <span class="arrow"></span>
+        {% endif %}
+      </a> 
+    </li>
+	{% endfor %}
+</ul>

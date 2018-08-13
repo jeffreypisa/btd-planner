@@ -1,0 +1,17 @@
+.mod-quoteblok {
+  h3 {
+    font-size: 21px;
+    line-height: 24px;
+    font-weight: 200;
+    color: #4DAADF;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-quoteblok {
+    h3 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+}

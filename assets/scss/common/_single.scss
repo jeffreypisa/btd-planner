@@ -1,0 +1,36 @@
+.single {
+  .prev {
+    float: left;
+    width: 20px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+  }
+  .next {
+    float: right;
+    width: 20px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+  }
+  .prev:hover, .next:hover {
+    opacity: 1;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .single {
+    .prev {
+      width: 30px;
+      margin-bottom: 0;
+    }
+    .next {
+      width: 30px;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 21px;
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<div class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+			<section class="mod-top inverted" style="background-image: url({{ TimberImage(post.get_field('background')).src }})">
+			  <div class="container">
+  				<div class="text-center">
+  				  <h1 class="slogan">{{ post.slogan }}</h1>
+  				  <h3> {{ post.intro }} </h3>
+            <a href="{{ topknoplink }}" class="btn btn-outline-primary"> {{ post.top_knop_tekst }} </a>
+            {% if post.bekijkvideo %}
+              <a class="btn btn-primary" data-lity href="https://www.youtube.com/watch?v={{ post.embed_code }}"> {{ post.bekijk_video_tekst }}</a>
+            {% endif %}
+  				</div> 
+			  </div>
+			  <img class="prorail" alt="prorail" src="{{ options.prorail_logo }}">
+        <div class="btn-scrolldown">
+		      <img width="60" height="60" src="{{theme.link}}/static/img/down-chevron.svg">
+        </div>
+			</section>
+			<section id="newsblock">
+			  <div class="container">
+			    <div class="row">
+			      <div class="col-md-7">
+			        <div class="mod-nieuws">
+    			      <h2> Nieuws </h2>
+    	          {% for item in nieuws %}
+    	            <a href="{{ item.permalink }}" class="item">
+                    <h3> {{ item.title }} </h3>
+                    <small> {{ item.date }} </small>
+    	            </a>
+    	          {% endfor %}
+    			    </div>
+            </div>
+            <div class="col-md-5">
+              <div class="mod-kalender">
+                <div class="card">
+                  <div class="card-block">
+                    <h2> Kalender </h2>
+                    {% if kalender|length == 0 %} 
+                      Er zijn geen evenementen geplanned op dit moment
+                      <br>
+                    {% else %}
+                      {% for item in kalender %}
+                        <a class="item" href="{{ item.permalink }}">
+                          <div class="date">
+                            <div class="d">
+                              {{ item.datum|date('d') }}
+                            </div>
+                            <div class="m">
+                              {{ item.datum|date('M') }}
+                            </div>
+                          </div>
+                          <h3> {{ item.title }} </h3>
+                          <p> {{ item.locatie }} </p>
+                        </a>
+          	          {% endfor %}
+                    {% endif %}
+        	          <br>
+        	          <a href="/kalender" class="btn-readmore">
+        	            <span></span>
+        	            Bekijk kalender
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+			  </div>
+			</section>
+			<section class="mod-formbar alt">
+			  <div class="container">
+			    <h2 class="text-center">{{ options.form_titel }}</h2>
+			    <div class="row">
+			      <div class="col-md-6 offset-md-3 col-lg-4 offset-lg-4">
+              {% include "form.twig" %}
+			      </div>
+			    </div>
+			  </div>
+			</section>
+      {% include 'pagebuilder.twig' %}
+		</div>
+	</div><!-- /content-wrapper -->
+{% endblock %}

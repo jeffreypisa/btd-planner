@@ -1,0 +1,23 @@
+{% for hoofdmenu in options.hoofdmenu %}
+  <div class="col-md-4 col-lg-2"> 
+    <div class="menu">
+	    <h3>{{ hoofdmenu.naam }} </h3>
+	    <ul class="list-unstyled">
+        {% for pagina in hoofdmenu.paginas %}
+          <li>
+            <a href="{{ pagina.pagina_link }}"> {{ pagina.naam }} </a>
+          </li>
+        {% endfor %}
+        {% if hoofdmenu.naam == 'Kennisbank' %}
+          {% for cat in type %}
+            {% if cat.get_posts|length > 0 %}
+              <li class="{{ cat.slug }} {% if currentcat == cat.slug %} active {% endif %} ">
+                <a href="{{ cat.link }}">{{ cat.name }}</a>
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+	    </ul>
+    </div>
+  </div>
+{% endfor %}

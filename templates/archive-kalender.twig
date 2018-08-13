@@ -1,0 +1,37 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+      <div class="mod-pageheader" style="background-image: url( {{TimberImage(options.pageheader_background).src}}">
+        <div class="container">
+          <h1 class="article-h1">{{title}}</h1>
+        </div>
+      </div>
+      <section>
+        <div class="container">
+          <div class="mod-kalender">
+            {% if kalender|length == 0 %} 
+              Er zijn geen evenementen geplanned op dit moment
+            {% else %}
+              {% for item in kalender %}
+                <a class="item" href="{{ item.permalink }}">
+                  <div class="date">
+                    <div class="d">
+                      {{ item.datum|date('d') }}
+                    </div>
+                    <div class="m">
+                      {{ item.datum|date('M') }}
+                    </div>
+                  </div>
+                  <h3> {{ item.title }} </h3>
+                  <p> {{ item.locatie }} </p>
+                </a>
+              {% endfor %} 
+            {% endif %}
+          </div>
+        </div>
+      </section>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

@@ -1,0 +1,36 @@
+/*
+ * Theme Name: Btd-Planner theme
+ * Description: Timber theme
+ * Author: Jeffrey Pisa | EMONKS
+*/
+
+@import '../../bower_components/bootstrap/scss/bootstrap.scss';
+@import 'bower_components/lity/dist/lity.css';
+@import '../btdplanner/bower_components/featherlight/release/featherlight.min.css';
+
+@import '../btdplanner/assets/fonts/font.css';
+
+@import 'common/variables';
+@import 'common/base';
+@import 'common/single';
+@import 'common/buttons';
+@import 'common/section';
+@import 'common/form';
+@import 'common/card';
+@import 'common/form';
+
+@import 'modules/footer';
+@import 'modules/header';
+@import 'modules/nieuws';
+@import 'modules/submenu';
+@import 'modules/formbar';
+@import 'modules/kalender';
+@import 'modules/type';
+@import 'modules/statsblok';
+@import 'modules/quoteblok';
+@import 'modules/pageheader';
+@import 'modules/top';
+@import 'modules/mobilemenu';
+@import 'modules/kennisbank';
+@import 'modules/tekstblokkenmeticonen';
+@import 'modules/faq';

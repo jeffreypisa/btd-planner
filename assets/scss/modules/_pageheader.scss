@@ -1,0 +1,21 @@
+.mod-pageheader {
+  background: $darkgrey;
+  padding: 20px 0;
+  background-position: center right;
+  background-repeat: no-repeat;
+  h1 {
+    color: #fff;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-pageheader {
+    h1 {
+      color: #fff;
+      font-size: 44px;
+      line-height: 50px;
+    }
+  }
+}

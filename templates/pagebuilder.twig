@@ -1,0 +1,128 @@
+{% set itemblok = 0 %}
+{% for item in post.get_field('Sectie') %}
+  {% if item.acf_fc_layout == 'quoteblok' %}
+		<section class="mod-quoteblok alt">
+		  <div class="container">
+        <h3 class="text-center"> {{ item.quote }} </h3>
+		  </div>
+		</section>
+  {% elseif item.acf_fc_layout == 'actieknoppen' %}
+		<section class="mod-actieknoppen alt2">
+		  <div class="container">
+		    <div class="text-center">
+          {% for item in item.knop %}
+            <a class="btn btn-outline btn-big" href="{{ item.link }}"> {{ item.naam }} </a>
+          {% endfor %}
+		    </div>
+		  </div>
+		</section>
+  {% elseif item.acf_fc_layout == 'statsblok' %}
+		<section class="mod-statsblok alt">
+		  <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="number">
+                {{ item.stats_01_number }}
+              </div>
+              <div class="label">
+                {{ item.stats_01_label }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="number">
+                {{ item.stats_02_number }}
+              </div>
+              <div class="label">
+                {{ item.stats_02_label }}
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="number">
+                {{ item.stats_03_number }}
+              </div>
+              <div class="label">
+                {{ item.stats_03_label }}
+              </div>
+            </div>
+          </div>
+        </div>
+		  </div>
+		</section>  
+  {% elseif item.acf_fc_layout == 'tekstblok_groot_met_afbeelding' %}
+    <section class="mod-tekstblokgroot {% if item.achtergrondkleur_lichter %} alt2 {% endif %}">
+		  <div class="container">
+		    <div class="row">
+		      {% if item.afbeelding_links %}
+  		      <div class="col-md-5 offset-md-1">
+  		        {% if item.afbeelding %}
+  		          <img src="{{ TimberImage(item.afbeelding).src }}">
+  		        {% endif %}
+  		      </div>
+  		      <div class="col-md-6">
+    		      <h2> {{ item.titel }} </h2>
+    		      <p> {{ item.content}} </p>
+  		      </div>
+		      {% else %}
+  		      <div class="col-md-6">
+    		      <h2> {{ item.titel }} </h2>
+    		      <p> {{ item.content}} </p>
+  		      </div>
+  		      <div class="col-md-5 offset-md-1">
+  		        {% if item.afbeelding %}
+  		          <img src="{{ TimberImage(item.afbeelding).src }}">
+  		        {% endif %}
+  		      </div>
+  		    {% endif %}
+		    </div>
+		  </div>
+		</section>
+  {% elseif item.acf_fc_layout == 'kleine_blokken_met_iconen' %}
+    <section class="mod-tekstblokkenmeticonen">
+		  <div class="container">
+  		  <div class="text-center">
+  	      <h2 class="center"> {{ item.titel }} </h2>
+	      </div>
+	      <div class="row">
+  	      {% for blok in item.blok %}
+  	      	<div class="col-md-6">
+    	        <div class="item">
+    	          <img width="100" height="100" src="{{ TimberImage(blok.afbeelding).src }}">
+    	          <h3> {{ blok.titel }} </h3>
+    	          {{ blok.content }}
+    	          {% if blok.readmore %}
+    	            <a href="{{ blok.readmore }}"> {{ blok.toon_lees_meer_link }} </a>
+    	          {% endif %}
+    	        </div>
+            </div>
+  	      {% endfor %}
+	      </div>
+	      <br>
+	      {% if item.knop_link %}
+  	      <div class="text-center">
+  	        <a class="btn btn-outline btn-big" href="{{ item.knop_link }}"> {{ item.knop_naam }} </a>
+  	      </div>
+	      {% endif %}
+	    </div>
+		</section>
+		{% elseif item.acf_fc_layout == 'faq_categorie' %}
+		<section class="mod-faq">
+		  <div class="container">
+  		  {% set nr = 0 %}
+  		    <h2> {{ item.titel }} </h2>
+          {% for vraag in item.vraag %}
+            <div class="item">
+              <a data-toggle="collapse" href="#collapse{{ itemblok }}{{ nr }}"><h3>{{ vraag.vraag }}</h3><span class="chevron"></span></a>
+              <div class="collapse" id="collapse{{ itemblok }}{{ nr }}"> {{ vraag.antwoord }}</div>
+            </div>
+          {% set nr = nr + 1 %}
+        {% endfor %}
+        {% set itemblok = itemblok + 1 %}
+		  </div>
+		</section>
+  {% endif %}
+{% endfor %}

@@ -1,0 +1,126 @@
+.btn {
+  padding: 7px 14px 4px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.1s ease-in-out;
+  border-radius: 0px;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: "DIN Next Rounded LT Pro";
+}
+.btn.btn-primary {
+  background: $red;
+  border-color: $red;
+}
+.btn.btn-primary:hover {
+  background: lighten( $red, 6% );
+  border-color: lighten( $red, 6% );
+}
+.btn.btn-primary:focus,
+.btn.btn-primary:target,
+.btn.btn-primary:active {
+  background: lighten( $red, 20% );
+  border-color: lighten( $red, 20% );
+}
+.btn.btn-outline {
+  color: $darkgrey;
+  border: 3px solid $darkgrey;
+}
+.btn.btn-outline:hover {
+  background: $darkgrey;
+  color: #fff;
+}
+.btn.btn-outline:focus,
+.btn.btn-outline:target,
+.btn.btn-outline:active {
+  background: lighten( $darkgrey, 20% );
+  border-color: lighten( $darkgrey, 20% );
+}
+.btn.btn-outline.btn-big {
+  padding: 12px 25px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.btn.btn-outline-primary {
+  color: $red;
+  border: 3px solid $red;
+}
+
+.btn.btn-outline-primary:hover {
+  background: $red;
+  color: #fff;
+}
+
+.btn.btn-outline-primary:focus,
+.btn.btn-outline-primary:target,
+.btn.btn-outline-primary:active {
+  background: lighten( $red, 20% );
+  border-color: lighten( $red, 20% );
+  color: #fff;
+}
+
+.btn.btn-outline-primary.btn-big {
+  padding: 12px 25px 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.inverted .btn.btn-outline-primary {
+  color: #fff;
+  border-color: #fff;
+}
+
+.inverted .btn.btn-outline-primary:hover {
+  color: $red;
+  background: #fff;
+  border-color: #fff;
+}
+
+.inverted .btn.btn-outline-primary:focus,
+.inverted .btn.btn-outline-primary:target,
+.inverted .btn.btn-outline-primary:active {
+  background: lighten( $red, 20% );
+  background: #fff;
+  border-color: #fff;
+}
+
+.btn-readmore {
+  font-weight: 600;
+  color: $darkgrey;
+  span {
+    position: relative;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    background: $darkgrey;
+  }
+  span:after {
+    position: absolute;
+    content: '';
+    top: 4px;
+    right: 4px;
+    width: 0;
+  	height: 0;
+  	border-top: 4px solid transparent;
+  	border-left: 6px solid white;
+  	border-bottom: 4px solid transparent;
+  }
+}
+.btn-readmore:hover {
+  text-decoration: none;
+  color: $red;
+  span {
+    background: $red;
+  }
+}
+.btn-readmore:focus,
+.btn-readmore:target,
+.btn-readmore:active {
+  text-decoration: none;
+  color: lighten( $red, 20% );
+  span {
+    background: lighten( $red, 20% );
+  }
+}
