@@ -36,9 +36,8 @@
       				</div>
       				<div class="meta">
         				<h2>
-        				  {% if post.datum %} {{ post.datum|date(dmY) }} {% else %} {{ post.date|date(dmY) }} {% endif %}{% if post.locatie %}, {{ post.locatie }} {% endif %}
+        				  {% if post.datum %} {{ post.datum|date(dmY) }} {% else %} {{ post.date }} {% endif %}{% if post.locatie %}, {{ post.locatie }} {% endif %}
         				</h2>
-        				
       				</div>
       				<div class="article-body">
       				  <!--
